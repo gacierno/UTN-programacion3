@@ -20,6 +20,6 @@ public class EspadaLarga extends Espada {
      *   GETTERS
      * */
     public double getModificador(){
-        return this.aceroForjado + this.filoExterno;
+        return this.aceroForjado * this.filoExterno;
     }
 }
