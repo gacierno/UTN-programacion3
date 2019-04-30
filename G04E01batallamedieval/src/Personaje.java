@@ -11,12 +11,12 @@ abstract class Personaje {
     **/
 
     public Personaje(String nombre, String clase, int puntosVida, int puntosDefensa, int numeroVidas, Arma arma) {
-        this.nombre = nombre;
-        this.clase = clase;
-        this.puntosVida = puntosVida;
-        this.puntosDefensa = puntosDefensa;
-        this.numeroVidas = numeroVidas;
-        this.arma = arma;
+        this.setNombre( nombre );
+        this.setClase( clase );
+        this.setPuntosVida( puntosVida );
+        this.setPuntosDefensa( puntosDefensa );
+        this.setNumeroVidas( numeroVidas );
+        this.setArma( arma );
     }
 
     /*
@@ -28,19 +28,15 @@ abstract class Personaje {
     public void setClase( String clase ){
         this.clase = clase;
     }
-
     public void setPuntosVida(int puntosVida) {
         this.puntosVida = puntosVida;
     }
-
     public void setPuntosDefensa(int puntosDefensa) {
         this.puntosDefensa = puntosDefensa;
     }
-
     public void setNumeroVidas(int numeroVidas) {
         this.numeroVidas = numeroVidas;
     }
-
     public void setArma(Arma arma) {
         this.arma = arma;
     }
@@ -50,19 +46,15 @@ abstract class Personaje {
     public String getNombre() {
         return nombre;
     }
-
     public String getClase() {
         return clase;
     }
-
     public int getPuntosVida() {
         return puntosVida;
     }
-
     public int getPuntosDefensa() {
         return puntosDefensa;
     }
-
     public int getNumeroVidas() {
         return numeroVidas;
     }
@@ -73,13 +65,13 @@ abstract class Personaje {
      *  @PARAM target
      *  @returns int
      */
-    public int atacar( Personaje target ){
+    public void atacar( Personaje target ){
         int danyoReal = 0;
         int probabilidadGolpe = (int)( Math.ceil( 20* Math.random() ) ); //multiplico por 20 para simular un D20
         if( probabilidadGolpe > target.getPuntosDefensa() ){
             danyoReal = (int)Math.ceil( this.arma.hacerDanyo()*Math.random()+1 );
         }
-        return danyoReal;
+        target.recibirDanyo( danyoReal );
     }
 
     /*
