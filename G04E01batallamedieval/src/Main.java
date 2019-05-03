@@ -8,7 +8,7 @@ public class Main {
         Personaje humanito = new Humano( "German", "descripcion", 20, 3, 3, larga );
         Personaje vikinguito = new Vikingo( "Ragnar", "desc", 22, 5, 3, lanza);
 
-        SimularArena.lucha( humanito, vikinguito );
+        SimularArena.lucharEntre( humanito, vikinguito );
 
     }
 }

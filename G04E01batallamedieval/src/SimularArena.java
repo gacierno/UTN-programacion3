@@ -1,5 +1,5 @@
 public class SimularArena {
-    public static void lucha( Personaje personaje1, Personaje personaje2 ){
+    public static void lucharEntre( Personaje personaje1, Personaje personaje2 ){
         while( personaje1.getPuntosVida() > 0 && personaje2.getPuntosVida() > 0 ){
 
             System.out.println("la vida de "+ personaje2.getNombre()+" es "+ personaje2.getPuntosVida() );
